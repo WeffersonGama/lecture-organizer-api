@@ -33,6 +33,6 @@ lectures_times_list = [
 ]
 
 lectures_times_list.each do |track, time|
+  Lecture.create( track: track, time: time ) unless time == '12:00'
   Lecture.create( track: track, time: time, title: 'Almoço' ) if time == '12:00'
-  Lecture.create( track: track, time: time )
 end
