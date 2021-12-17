@@ -3,7 +3,7 @@ class CreateLectures < ActiveRecord::Migration[6.1]
     create_table :lectures do |t|
       t.string :track, limit: 1
       t.string :time
-      t.string :title, null: false
+      t.string :title
 
       t.timestamps
     end
