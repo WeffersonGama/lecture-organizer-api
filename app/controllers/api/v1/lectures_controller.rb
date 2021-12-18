@@ -1,5 +1,5 @@
-class LecturesController < ApplicationController
-  before_action :set_lecture, only: [:show, :update, :destroy]
+class Api::V1::LecturesController < ApplicationController
+  before_action :set_lecture, only: %i[show update destroy]
 
   # GET /lectures
   def index
@@ -9,9 +9,9 @@ class LecturesController < ApplicationController
   end
 
   # GET /lectures/1
-  def show
-    render json: @lecture
-  end
+  # def show
+  #   render json: @lecture
+  # end
 
   # POST /lectures
   def create
@@ -34,18 +34,19 @@ class LecturesController < ApplicationController
   end
 
   # DELETE /lectures/1
-  def destroy
-    @lecture.destroy
-  end
+  # def destroy
+  #   @lecture.destroy
+  # end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_lecture
-      @lecture = Lecture.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def lecture_params
-      params.require(:lecture).permit(:track, :time, :title)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_lecture
+    @lecture = Lecture.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def lecture_params
+    params.require(:lecture).permit(:track, :time, :title)
+  end
 end
