@@ -8,11 +8,6 @@ class Api::V1::LecturesController < ApplicationController
     render json: @lectures
   end
 
-  # GET /lectures/1
-  # def show
-  #   render json: @lecture
-  # end
-
   # POST /lectures
   def create
     @lecture = Lecture.new(lecture_params)
@@ -33,11 +28,6 @@ class Api::V1::LecturesController < ApplicationController
     end
   end
 
-  # DELETE /lectures/1
-  # def destroy
-  #   @lecture.destroy
-  # end
-
   private
 
   # Use callbacks to share common setup or constraints between actions.
@@ -47,6 +37,6 @@ class Api::V1::LecturesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def lecture_params
-    params.require(:lecture).permit(:track, :time, :title)
+    params.require(:lecture).permit(:files)
   end
 end
