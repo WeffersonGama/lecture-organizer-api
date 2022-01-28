@@ -27,3 +27,6 @@ Layout/LineLength:
 
 Metrics/BlockLength:
   Enabled: false
+  
+Metrics/PerceivedComplexity:
+  Enabled: false
